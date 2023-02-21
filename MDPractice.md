@@ -1,6 +1,6 @@
-#Markdown Practice#
+# Markdown Practice #
 
-##Here are some basic commands##
+## Here are some basic commands ##
 
 When you want something in **BOLD**, you need to encase it in **double "**"**.
 
