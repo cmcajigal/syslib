@@ -16,6 +16,26 @@ Now you need to remember the commands!
 Oof! That's not easy!
 Practice! Practice! Practice!
 
+### Git and GitHub
+
+**COMMANDS**
+
+Since I can't seem to remember these commands
+I am dropping them here to find easily!
+
+Track changes with
+>git add .
+
+Commit changes and add message with:
+>git commit -m "add message in quotes"
+
+Push Changes to remote repo with:
+>git push origin main
+
+Pull changes to sync those made on GitHub with:
+>git pull origin main
+
+
 ### Apache 2 
 
 Apache 2 install worked great!
