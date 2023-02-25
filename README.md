@@ -25,3 +25,54 @@ Maybe some sub directories are in order....
 Note:
 1. Use cd /var/www/html to work on on apache
 2. At least I think so.
+
+###MYSQL
+
+Typing is extremely important. 
+Like your favorite English teacher, 
+MYSQL doesn't like incomplete sentences.
+**Don't** forget the semicolon!
+
+I do not recommend trying this when tired!
+
+
+**COMMANDS**
+
+**Logging In**
+
+> mysql -u opacuser -p
+
+-p (asks for password)
+-u (indicates user name?)(check on this!)
+
+help is "\h"
+clear input is "\c"
+quit is "\q"
+clear screen is "ctrl l"
+
+**Table Commmands**
+select title from *database name* where title not like '%e';
+This selects titles that don't end in "e".
+
+>alter table *database name*
+>add publisher varchar(75) after title;
+
+example: update books set publisher='Knopf' where id='4';
+
+**selecting items from database to be shown**
+>select * from *database name*
+this selects all
+
+>select author, publisher
+    -> from *database name*
+    -> where copyright < '2011-01-01';
+> select author from books order by copyright;
+
+
+**examples of updating**
+> delete from books where author='Julia Phillips';
+> insert into books
+    -> (author, title, publisher, copyright) values
+    -> ('Emma Donoghue', 'Room', 'Little, Brown \& Company', '2010-08-06'),
+
+
