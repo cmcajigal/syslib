@@ -95,4 +95,7 @@ this selects all
     -> (author, title, publisher, copyright) values
     -> ('Emma Donoghue', 'Room', 'Little, Brown \& Company', '2010-08-06'),
 
+Ok, so you need to remember to select database
+> use opacdb;
+
 
