@@ -46,7 +46,7 @@ Note:
 1. Use cd /var/www/html to work on on apache
 2. At least I think so.
 
-###MYSQL
+### MYSQL
 
 Typing is extremely important. 
 Like your favorite English teacher, 
