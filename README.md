@@ -98,4 +98,24 @@ this selects all
 Ok, so you need to remember to select database
 > use opacdb;
 
+So, funny story, I got the search to work. It worked great!
+Except... It couldn't return to the search screen.
+What!!!!
+Look, look some more, look a lot!
+Seriously what is **WRONG**?
+Paste the link... works just peachy.
+*SIGH*
+I feel like Dory...
+*"Just keep looking, looking, looking"*
+*"Just keep looking, looking, looking"*
+Wait a minute.
+Compare copied link to link on search page.
+**OMG** I typed the web address wrong in the *.html* file!
+Yes, brilliant that I am... I kept typing a *5* instead of a *4*!
+But instead of dwelling on it...
+I'm going to **pat myself on the back** for finding it and
+not having to ask for help!
+You go girl! :)
+
+
 
