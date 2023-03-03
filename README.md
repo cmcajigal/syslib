@@ -70,6 +70,8 @@ clear input is "\c"
 quit is "\q"
 clear screen is "ctrl l"
 
+>use opacdb
+
 **Table Commmands**
 select title from *database name* where title not like '%e';
 This selects titles that don't end in "e".
