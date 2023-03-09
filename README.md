@@ -119,7 +119,7 @@ I'm going to **pat myself on the back** for finding it and
 not having to ask for help!
 You go girl! :)
 
-###Cataloging Page with our Bare Bones OPAC
+### Cataloging Page with our Bare Bones OPAC
 
 Not bad at all.
 Seemed to go pretty smoothly.
