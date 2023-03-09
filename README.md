@@ -119,5 +119,24 @@ I'm going to **pat myself on the back** for finding it and
 not having to ask for help!
 You go girl! :)
 
+###Cataloging Page with our Bare Bones OPAC
+
+Not bad at all.
+Seemed to go pretty smoothly.
+**Except**, weirdly, the URL to return to the entry page
+is not shown correctly.  WHAT!!!!
+
+**BUT IT WORKS!**
+
+Yes, I went back to the insert.php file,
+and yep, that's my URL.
+IDK why, but it works! **WEIRD!!**
+
+I even tried a different browser. Yep, Still works!
+
+My other question I will ask Dr. Burns,
+*"Why doesn't it ask you for your password
+every time you open it."*
+No, I did not save the password.
 
 
