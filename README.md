@@ -139,4 +139,78 @@ My other question I will ask Dr. Burns,
 every time you open it."*
 No, I did not save the password.
 
+Got it. Thanks Dr. Burns
+
+### OMEKA ###
+
+1)sudo apt install imagemagick
+2) sudo a2enmod rewrite
+3) sudo systemctl restart apache2
+4) sudo systemctl restart mysql
+5) I **KNOW**  I'm missing stuff!
+6) cd /var/www/html
+7) sudo wget https://github.com/omeka/Omeka/releases/download/v3.1/omeka-3.1.zip
+8) ls
+
+9) sudo unzip omeka-3.1.zip
+wait, no, I've got to download that...   
+10) sudo apt install unzip
+
+ok now unzip. GREAT!
+
+11) cp omeka-3.1 omeka
+No? hmm... wait, it's a direcctory?!?!?!
+try mv omeka-3.1 omeka
+gotta add sudo!!!!
+
+12) cd omeka
+13) sudo nano -l db.ini
+ok go refresh your memory as to what goes here....
+
+Add  
+define('FS_METHOD','direct');
+to bootstrap.php?
+
+14) sudo chown -R www-data;www-data *
+
+15) restart apache2 and mysql
+
+Not working... will dig deeper, in a bit.
+
+OK I'm back.
+need to reboot and install some updates
+
+So, after searching my files and going back and forth in the previous chapters directions
+I think I've got it figured out.
+
+16)cd omeka
+17)sudo nano -l db.ini 
+(localhost, omekauser, pswd - super secret, omekadb)
+
+18 & 19) restart apache 2 and mysql
+
+I'm gonna try it.  I think I forgot to document something, but IDK.
+
+**SUCCESS!**
+*I really, really, thought it would take longer to figure out what I left out. 
+Especially since I apparently didn't document the last couple sections. 
+May need to do an after the fact edit.*
+
+Set up admin page and ready to populate!
+Wish me luck!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
