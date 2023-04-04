@@ -200,6 +200,32 @@ Set up admin page and ready to populate!
 Wish me luck!
 
 
+### KOHA ###
+
+New VM followed the old instructions added in changes for bigger machine
+Firewall changes per Dr. Burns...
+Menu, VPC Network, Firewall, Create a firewall rule,
+NAME: koha-ils, description: allow traffic, TARGETS: all instances in network,
+SOURCE IPv4: 0.0.0.0/0 , SPECIFIED PROTOCOLS AND PORTS: TCP, PORTS: 8080
+**create**
+
+
+Updated, upgraded, autoremoved, cleaned
+
+install gnupg2, reboot
+
+jumping to root user
+
+sudo su
+add koha respository
+
+apt update
+
+apt show koha-common
+apt install koha-common
+
+whelp! time to pause. gotta go to work.
+Next up configure Koha
 
 
 
