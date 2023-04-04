@@ -227,6 +227,69 @@ apt install koha-common
 whelp! time to pause. gotta go to work.
 Next up configure Koha
 
+### Quick Detour ###
+
+Change prompt to colleen@syslib_2023
+
+sudo nano ~/.bashrc
+
+at end of file
+
+PS1="colleen@syslib-2023 \w $ "
+
+save and exit nano
+at command prompt
+
+source ~/.bashrc
+
+### And Back to Koha installation ###
+
+Configure Koha
+cd /etc/koha
+
+ls
+
+nano -l koha-sites.conf (sudo cuz I'm not in root!)
+change port
+**find** INTRAPORT="80" **change to** INTRAPORT="8080"
+
+oh, look! mysql again
+
+cd back to root
+
+install mysql-server (apt install mysql-server)
+
+mysqladmin -u root password bibliolib1
+
+now enable URL rewriting and CGO functionality
+a2enmod rewrite
+a2enmod cgi 
+
+then restart Apache2 - systemctl restart apache2
+
+here's our database
+koha-create --create-db bibliolib
+
+this tells Apache2 to listen on port 8080
+nano /etc/apache2/ports.conf 
+Listen: 8080
+
+restart apache
+
+disabling apache2, enabling traffic compression with deflate, enable bibliolib site
+a2dissite 000-default
+a2enmod deflate
+a2ensite bibliolib
+systemctl reload apache2
+systemctl restart apache2
+
+<user>koha_bibliolib</user>
+<pass>=0zzicp;k9`)r~M;</pass>
+
+and it's not working some kind of Internal Server Error.
+I've review it several times, and can't find the problem. need sleep.
+posting on element for ideas.
+
 
 
 
