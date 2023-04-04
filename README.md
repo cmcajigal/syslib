@@ -290,6 +290,29 @@ and it's not working some kind of Internal Server Error.
 I've review it several times, and can't find the problem. need sleep.
 posting on element for ideas.
 
+Per Dr. Burns...
+ran sudo apachectl configtest
+says syntax ok
+
+cd /var/log/apache2
+less error.log
+
+Lots, but idk what they mean
+
+sudo su
+less ~/.bash_history
+
+Dr. Burns- caught a mistake in command line that I already caught sits.conf instead of sites.conf
+
+sudo systemctl reload apache2
+sudo systemctl restart apache2
+systemctl status apache2
+-check for errors - nada
+
+Looks like I'm deleting this one and starting over. **Good Luck**
+
+
+
 
 
 
