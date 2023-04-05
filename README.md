@@ -218,6 +218,11 @@ jumping to root user
 
 sudo su
 add koha respository
+379
+echo 'deb http://debian.koha-community.org/koha stable main' | sudo tee /etc/apt/sources.list.d/koha.list
+
+wget -q -O- https://debian.koha-community.org/koha/gpg.asc | sudo apt-key add -
+
 
 apt update
 
@@ -311,8 +316,15 @@ systemctl status apache2
 
 Looks like I'm deleting this one and starting over. **Good Luck**
 
+Started over
+Half way thru....Apache2 can't restart
 
+look, look, look, ugh! 
+Third time's a charm, right?
 
+YES, it is. 
+Added a few patrons
+working on a couple books.
 
 
 
