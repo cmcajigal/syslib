@@ -326,8 +326,22 @@ YES, it is.
 Added a few patrons
 working on a couple books.
 
+### ADDING MORE TO KOHA ###
 
+Thanks to another student (Hannah, Ashley, I don't remember) I now know how to use Z39.50 to add books
 
+From Home - Cataloging - New from Z39.50 - select all libraries I've added - insert **ISBN** or **Title** and **Author** - then search
+Sometimes yea! sometimes Drat! I will find more that connect later. But this is a start
+
+Ooo, I've figured out how to automatically add **Barcodes** this works great since I'm not printing any.
+
+From Home - Configuration - Global Systems Preferences - Cataloging - Record Structure - autoBarcode
+since I started with 100001 I am using  **Barcodes are *generated in the form 1,2,3*.**
+I took a gamble and it paid off! It started from my last manually entered number. So psyched! Now I don't have to remember where I am at.
+
+Took the opportunity to add 11 more books!
+
+Now I need to work on the whole thing!
 
 
 
