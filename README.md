@@ -73,7 +73,7 @@ clear screen is "ctrl l"
 >use opacdb
 
 **Table Commmands**
-select title from *database name* where title not like '%e';
+>select title from *database name* where title not like '%e';
 This selects titles that don't end in "e".
 
 >alter table *database name*
@@ -81,7 +81,7 @@ This selects titles that don't end in "e".
 
 example: update books set publisher='Knopf' where id='4';
 
-**selecting items from database to be shown**
+**Selecting items from database to be shown**
 >select * from *database name*
 this selects all
 
@@ -91,7 +91,7 @@ this selects all
 > select author from books order by copyright;
 
 
-**examples of updating**
+**Examples of updating**
 > delete from books where author='Julia Phillips';
 > insert into books
     -> (author, title, publisher, copyright) values
@@ -113,7 +113,7 @@ I feel like Dory...
 Wait a minute.
 Compare copied link to link on search page.
 **OMG** I typed the web address wrong in the *.html* file!
-Yes, brilliant that I am... I kept typing a *5* instead of a *4*!
+Yes, brilliant person that I am... I kept typing a *5* instead of a *4*!
 But instead of dwelling on it...
 I'm going to **pat myself on the back** for finding it and
 not having to ask for help!
@@ -139,7 +139,23 @@ My other question I will ask Dr. Burns,
 every time you open it."*
 No, I did not save the password.
 
+dummy URL!
 Got it. Thanks Dr. Burns
+
+### WORDPRESS ###
+
+Oh dear! How did I miss an entire section?
+What do I remember about installing Wordpress?!?!?!?!
+Well, obviously it wasn't too bad since I didn't write about it!
+
+I'm not going to post the directions since I didn't the first time, so here are my thoughts.
+I think the hardest thing about Wordpress is customizing it. 
+I want it to work a certain way or to move things, etc. but it doesn't do stuff like that.
+It the Wordpress way or nothing. 
+I finally got it set up in a way that is remotely what I wanted. 
+Figuring out the customizing is definitely going to take time if I get picky.
+But I don't really have that kind of time now. 
+Sigh.
 
 ### OMEKA ###
 
@@ -342,6 +358,30 @@ I took a gamble and it paid off! It started from my last manually entered number
 Took the opportunity to add 11 more books!
 
 Now I need to work on the whole thing!
+
+
+### LIBRARY SITE ARCHITECTURE ###
+
+Goal: connect Omeka and Koha to Wordpress site.
+That was really easy.
+Difficulties: 
+1) How to get back to Wordpress site from Omeka and Koha.
+2) Customizing Wordpress - still don't like it!
+
+Omeka, found out how to add a URL in the footer of Omeka so that "patrons" can get back to the "home" page at Wordpress
+This works splendidly. 
+Ok, now for Koha.
+Hmm....
+Found a "Koha Hacks" and tried to add a "button" to link back in the header.
+It's not working, and I don't know what's wrong with it. It probably something in the coding, but that may take awhile.
+My fix: looked up how to change my menu link in Wordpress so that Koha opens in a different tab.
+Viola! Now they can go to Koha and then just switch tabs to get back to Wordpress.
+I'm gonna submit as I've got more to do!
+
+### THANKS ###
+
+A big thanks to you, Dr. Burns. I really enjoyed this class, and wish I would have had more time 
+to dedicate to it. I think I have so much more to learn, but gave us a great start!
 
 
 
