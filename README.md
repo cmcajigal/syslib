@@ -159,37 +159,43 @@ Sigh.
 
 ### OMEKA ###
 
-1)sudo apt install imagemagick
-2) sudo a2enmod rewrite
-3) sudo systemctl restart apache2
-4) sudo systemctl restart mysql
-5) I **KNOW**  I'm missing stuff!
-6) cd /var/www/html
-7) sudo wget https://github.com/omeka/Omeka/releases/download/v3.1/omeka-3.1.zip
-8) ls
+> sudo apt install imagemagick
+> sudo a2enmod rewrite
+> sudo systemctl restart apache2
+> sudo systemctl restart mysql
 
-9) sudo unzip omeka-3.1.zip
+I **KNOW**  I'm missing stuff!
+> cd /var/www/html
+> sudo wget https://github.com/omeka/Omeka/releases/download/v3.1/omeka-3.1.zip
+> ls
+
+> sudo unzip omeka-3.1.zip
+
 wait, no, I've got to download that...   
-10) sudo apt install unzip
+
+> sudo apt install unzip
 
 ok now unzip. GREAT!
 
-11) cp omeka-3.1 omeka
-No? hmm... wait, it's a direcctory?!?!?!
-try mv omeka-3.1 omeka
-gotta add sudo!!!!
+> cp omeka-3.1 omeka
 
-12) cd omeka
-13) sudo nano -l db.ini
+No? hmm... wait, it's a direcctory?!?!?!
+try
+>mv omeka-3.1 omeka
+**gotta add sudo!!!!**
+
+> cd omeka
+> sudo nano -l db.ini
+
 ok go refresh your memory as to what goes here....
 
 Add  
-define('FS_METHOD','direct');
+> define('FS_METHOD','direct');
 to bootstrap.php?
 
-14) sudo chown -R www-data;www-data *
+> sudo chown -R www-data;www-data *
 
-15) restart apache2 and mysql
+> restart apache2 and mysql
 
 Not working... will dig deeper, in a bit.
 
@@ -198,12 +204,14 @@ need to reboot and install some updates
 
 So, after searching my files and going back and forth in the previous chapters directions
 I think I've got it figured out.
+I don't think we need the FS_METHOD line
 
-16)cd omeka
-17)sudo nano -l db.ini 
+> cd omeka
+> sudo nano -l db.ini 
 (localhost, omekauser, pswd - super secret, omekadb)
 
-18 & 19) restart apache 2 and mysql
+> restart apache2 
+> restart mysql
 
 I'm gonna try it.  I think I forgot to document something, but IDK.
 
@@ -228,22 +236,21 @@ SOURCE IPv4: 0.0.0.0/0 , SPECIFIED PROTOCOLS AND PORTS: TCP, PORTS: 8080
 
 Updated, upgraded, autoremoved, cleaned
 
-install gnupg2, reboot
+> install gnupg2, reboot
 
-jumping to root user
+> jumping to root user
 
-sudo su
-add koha respository
-379
-echo 'deb http://debian.koha-community.org/koha stable main' | sudo tee /etc/apt/sources.list.d/koha.list
+> sudo su add koha respository
 
-wget -q -O- https://debian.koha-community.org/koha/gpg.asc | sudo apt-key add -
+> echo 'deb http://debian.koha-community.org/koha stable main' | sudo tee /etc/apt/sources.list.d/koha.list
+
+> wget -q -O- https://debian.koha-community.org/koha/gpg.asc | sudo apt-key add -
 
 
-apt update
+> apt update
 
-apt show koha-common
-apt install koha-common
+> apt show koha-common
+> apt install koha-common
 
 whelp! time to pause. gotta go to work.
 Next up configure Koha
@@ -252,25 +259,27 @@ Next up configure Koha
 
 Change prompt to colleen@syslib_2023
 
-sudo nano ~/.bashrc
+> sudo nano ~/.bashrc
 
 at end of file
 
-PS1="colleen@syslib-2023 \w $ "
+> PS1="colleen@syslib-2023 \w $ "
 
 save and exit nano
 at command prompt
 
-source ~/.bashrc
+> source ~/.bashrc
 
 ### And Back to Koha installation ###
 
 Configure Koha
-cd /etc/koha
+> cd /etc/koha
 
-ls
+> ls
 
-nano -l koha-sites.conf (sudo cuz I'm not in root!)
+> nano -l koha-sites.conf 
+(sudo cuz I'm not in root!)
+
 change port
 **find** INTRAPORT="80" **change to** INTRAPORT="8080"
 
@@ -278,31 +287,33 @@ oh, look! mysql again
 
 cd back to root
 
-install mysql-server (apt install mysql-server)
+install mysql-server 
+> apt install mysql-server
 
-mysqladmin -u root password bibliolib1
+> mysqladmin -u root password bibliolib1
 
 now enable URL rewriting and CGO functionality
-a2enmod rewrite
-a2enmod cgi 
+> a2enmod rewrite
+> a2enmod cgi 
 
-then restart Apache2 - systemctl restart apache2
+then restart Apache2
+> systemctl restart apache2
 
 here's our database
-koha-create --create-db bibliolib
+> koha-create --create-db bibliolib
 
-this tells Apache2 to listen on port 8080
-nano /etc/apache2/ports.conf 
-Listen: 8080
+this tells Apache2 to listen on port 8080 add after listen 80
+> nano /etc/apache2/ports.conf 
+>Listen: 8080
 
 restart apache
 
 disabling apache2, enabling traffic compression with deflate, enable bibliolib site
-a2dissite 000-default
-a2enmod deflate
-a2ensite bibliolib
-systemctl reload apache2
-systemctl restart apache2
+> a2dissite 000-default
+> a2enmod deflate
+> a2ensite bibliolib
+> systemctl reload apache2
+> systemctl restart apache2
 
 <user>koha_bibliolib</user>
 <pass>=0zzicp;k9`)r~M;</pass>
@@ -312,22 +323,23 @@ I've review it several times, and can't find the problem. need sleep.
 posting on element for ideas.
 
 Per Dr. Burns...
-ran sudo apachectl configtest
+ran 
+> sudo apachectl configtest
 says syntax ok
 
-cd /var/log/apache2
-less error.log
+> cd /var/log/apache2
+> less error.log
 
 Lots, but idk what they mean
 
-sudo su
-less ~/.bash_history
+> sudo su
+> less ~/.bash_history
 
 Dr. Burns- caught a mistake in command line that I already caught sits.conf instead of sites.conf
 
-sudo systemctl reload apache2
-sudo systemctl restart apache2
-systemctl status apache2
+> sudo systemctl reload apache2
+> sudo systemctl restart apache2
+> systemctl status apache2
 -check for errors - nada
 
 Looks like I'm deleting this one and starting over. **Good Luck**
@@ -376,7 +388,7 @@ This works splendidly.
 Ok, now for Koha.
 Hmm....
 Found a "Koha Hacks" and tried to add a "button" to link back in the header.
-It's not working, and I don't know what's wrong with it. It probably something in the coding, but that may take awhile.
+It's not working, and I don't know what's wrong with it. It probably something in the coding, but that may take awhile to decipher.
 My fix: looked up how to change my menu link in Wordpress so that Koha opens in a different tab.
 Viola! Now they can go to Koha and then just switch tabs to get back to Wordpress.
 I'm gonna submit as I've got more to do!
