@@ -182,6 +182,7 @@ ok now unzip. GREAT!
 No? hmm... wait, it's a direcctory?!?!?!
 try
 >mv omeka-3.1 omeka
+
 **gotta add sudo!!!!**
 
 > cd omeka
